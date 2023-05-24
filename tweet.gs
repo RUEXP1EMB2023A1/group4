@@ -68,9 +68,57 @@ function logRedirectUri() {
   var service = getService();
   Logger.log(service.getRedirectUri());
 }
-function sendTweet() {
+function GoodMorningTweet() {
   var payload = {
-    text: 'Test tweet from API!!!!!'
+    text: 'おはよう'
+  }
+
+  var service = getService();
+  if (service.hasAccess()) {
+    var url = `https://api.twitter.com/2/tweets`;
+    var response = UrlFetchApp.fetch(url, {
+      method: 'POST',
+      'contentType': 'application/json',
+      headers: {
+        Authorization: 'Bearer ' + service.getAccessToken()
+      },
+      muteHttpExceptions: true,
+      payload: JSON.stringify(payload)
+    });
+    var result = JSON.parse(response.getContentText());
+    Logger.log(JSON.stringify(result, null, 2));
+  } else {
+    var authorizationUrl = service.getAuthorizationUrl();
+    Logger.log('Open the following URL and re-run the script: %s',authorizationUrl);
+  }
+}
+function GoodNightTweet() {
+  var payload = {
+    text: 'おやすみ'
+  }
+
+  var service = getService();
+  if (service.hasAccess()) {
+    var url = `https://api.twitter.com/2/tweets`;
+    var response = UrlFetchApp.fetch(url, {
+      method: 'POST',
+      'contentType': 'application/json',
+      headers: {
+        Authorization: 'Bearer ' + service.getAccessToken()
+      },
+      muteHttpExceptions: true,
+      payload: JSON.stringify(payload)
+    });
+    var result = JSON.parse(response.getContentText());
+    Logger.log(JSON.stringify(result, null, 2));
+  } else {
+    var authorizationUrl = service.getAuthorizationUrl();
+    Logger.log('Open the following URL and re-run the script: %s',authorizationUrl);
+  }
+}
+function NidoneTweet() {
+  var payload = {
+    text: '二度寝しています...zzz'
   }
 
   var service = getService();
