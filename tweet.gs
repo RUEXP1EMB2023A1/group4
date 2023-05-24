@@ -1,7 +1,7 @@
 const CLIENT_ID = 'NFUwdmdPaWdzZExFVUJfUnZyZWU6MTpjaQ'
 const CLIENT_SECRET = 'YL2nR6v3hwk75iyuH9IZIqne9sfVW08aK1wdQnyzM3RA-G2cjP'
 
-function main() {
+function  Tweet() {
   const service = getService();
   if (service.hasAccess()) {
     Logger.log("Already authorized");
