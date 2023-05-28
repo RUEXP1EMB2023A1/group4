@@ -1,4 +1,4 @@
-function sleepTimeCalculator(sheetName, getUpTimeCell, goBedTimeCell) //スプレッドシートの名前, 起きた時間が書いてあるセルの位置, 寝た時間の書いてあるセルの位置
+function sleepTimeCalculator(sheetName, getUpTimeCell, goBedTimeCell) //スプレッドシートの名前,起きた時間が書いてあるセルの位置, 寝た時間の書いてあるセルの位置
 {
   const ss = SpreadsheetApp.getActiveSpreadsheet(); //アクティブ状態のスプレッドシートを取得
   const sheet = ss.getSheetByName(sheetName); //ssのsheetNameと同じ名前のシートがある場合はそのシートを取得

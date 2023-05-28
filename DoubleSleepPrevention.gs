@@ -1,4 +1,4 @@
-function PreventSleep(sheetName, getUpTimeCell,sensorTimeCell) //スプレッドシートのシート名、起きる時刻が書かれたセルの位置、人感センサーの反応が書かれた位置
+function PreventSleep(accessToken, targetURL,heetName, getUpTimeCell,sensorTimeCell) //スプレッドシートのシート名、起きる時刻が書かれたセルの位置、人感センサーの反応が書かれた位置
 {
   const ss = SpreadsheetApp.getActiveSpreadsheet(); //アクティブ状態のスプレッドシートを取得
   const sheet = ss.getSheetByName(sheetName); //ssのsheetNameと同じ名前のシートがある場合はそのシートを取得
@@ -31,12 +31,14 @@ function PreventSleep(sheetName, getUpTimeCell,sensorTimeCell) //スプレッド
 
   if(nowTime - getUpTime > 300000 && respondSensor == false) //起きる時間から５分以上経過したかつ人感センサーの反応がないとき
   {
-      console.log("テレビの音量を上げる");
-      console.log("二度寝をしているとツイート");
+      Post.OperateConsumerElectronics(accessToken, targetURL); //テレビの音量操作
+      tweet.main();
+      postTweet("二度寝していますzzz");
+      //tweet.NidoneTweet(); //二度寝ツイート
   }
 }
 
 function test()
 {
-  PreventSleep('sheet1', 'B1', 'B3');
+  //PreventSleep('sheet1', 'B1', 'B3');
 }
