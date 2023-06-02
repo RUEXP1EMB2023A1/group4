@@ -1,4 +1,4 @@
-var access_token = ''//←トークンを記入
+var access_token = '0N7itvZ70SyUGjWB1SXpcUwmn5qKHDuWCdxXdlZ2gdE.v6YInmlb5Au6ALDF-a-fa3I_SSLGA8vVV-mNpx93MQo'//←トークンを記入
 var spreadsheetId = '1UE-jKZ9l0riR2bfNO94U1E5bzt8adB80mWMXoUFgLsg'//←スプレッドシートのIDを記入
 function remo() {
   var data = getNatureRemoData();//APIを叩いてデータ取得
@@ -42,9 +42,14 @@ function getLastData() {
   var datas = SpreadsheetApp.openById(spreadsheetId).getSheetByName('SA').getDataRange().getValues()//logシートをゲットする
   var data = datas[datas.length - 1]
   return {
-    totalpoint:data[1],
-    coupon:data[2],
+    date:data[0],
+    temp:data[1],
+    humi:data[2],
+    ill:data[3],
+    hu:data[4],
+    huTime:data[5],
     row:datas.length,
+    beforeDate:datas[datas.length - 2][0]
   }
 }
 
