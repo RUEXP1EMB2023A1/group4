@@ -30,7 +30,7 @@ function Light_On(){
 
 function Volume_up(){
    const REMO_ACCESS_TOKEN = "0N7itvZ70SyUGjWB1SXpcUwmn5qKHDuWCdxXdlZ2gdE.v6YInmlb5Au6ALDF-a-fa3I_SSLGA8vVV-mNpx93MQo"
-    var url = "https://api.nature.global/1/signals/11a079af-779c-4e44-9ea5-04e149eb1eeb/send"
+    var url = "https://api.nature.global/1/signals/e4424ff5-ccb8-45e5-8cf9-18812ef568b0/send"
   const headers = {
     "Content-Type" : "application/json;",
     'Authorization': 'Bearer ' + REMO_ACCESS_TOKEN,
