@@ -69,8 +69,18 @@ function logRedirectUri() {
   Logger.log(service.getRedirectUri());
 }
 function GoodMorningTweet() {
+  var year = new Date().getFullYear();
+  var month = new Date().getMonth()+1;
+  var date = new Date().getDate();
+  var hour = new Date().getHours();
+  var min = new Date().getMinutes();
+  // 配列
+var arr = [ "おはよう", "おきたぜ", "おきたよ", "GoodMorning","おい！お前ら朝だぞ！" ] ;
+
+// 配列からランダムで値を選択
+var ohayo = arr[ Math.floor( Math.random() * arr.length ) ] ;
   var payload = {
-    text: 'おはよう'
+    text: year + "年" + month + "月" + date + "日" + hour + ":" + min + "\n" + 'ohayo'
   }
 
   var service = getService();
@@ -93,8 +103,13 @@ function GoodMorningTweet() {
   }
 }
 function GoodNightTweet() {
+  var year = new Date().getFullYear();
+  var month = new Date().getMonth()+1;
+  var date = new Date().getDate();
+  var hour = new Date().getHours();
+  var min = new Date().getMinutes();
   var payload = {
-    text: 'おやすみ'
+    text: year + "年" + month + "月" + date + "日" + hour + ":" + min + "\n" + 'おやすみ'
   }
 
   var service = getService();
@@ -117,8 +132,13 @@ function GoodNightTweet() {
   }
 }
 function NidoneTweet() {
+  var year = new Date().getFullYear();
+  var month = new Date().getMonth()+1;
+  var date = new Date().getDate();
+  var hour = new Date().getHours();
+  var min = new Date().getMinutes();
   var payload = {
-    text: '二度寝しています...zzz'
+    text: year + "年" + month + "月" + date + "日" + hour + ":" + min + "\n" + '二度寝しています...zzz'
   }
 
   var service = getService();
